@@ -1,4 +1,4 @@
-There are 3 cersions of UDP Server:
+There are 3 versions of UDP Server:
 - UDP Server Blocking.py - Old version of server, no longer using
 - UDP Server Threading.py - New version of server, most up to date
 - UDP Server Threading.ipynb - Same as the .py one, but Jupyter Notebook is easier to visualize results with
