@@ -7,16 +7,17 @@ import threading
 import queue
 import pathlib
 
+torch.set_num_threads(20)
 
 # Threaded method used to listen for incomming frames sent by the client
 def receive_frame():
     
     while True:
         # Receive a UDP packet containing a JPEG image
-        print("Listening on port ", port)
+        # print("Listening on port ", port)
         data, addr = sock.recvfrom(65535)
         
-        print("FRAME RECEIVED")
+        # print("FRAME RECEIVED")
         
         # add frame to queue for processing
         frames_queue.put((data, addr))
@@ -54,7 +55,7 @@ def send_predictions():
             # Sometimes fails if frame size is too big
             try:
                 sock.sendto(string_data, addr)
-                print("FRAME SENT")
+                # print("FRAME SENT")
             except:
                 print("******************************* ERROR - FRAME NOT SENT *******************************")
 
@@ -64,7 +65,7 @@ def send_predictions():
 frames_queue = queue.Queue()
 
 # Import YOLO Model
-model = torch.hub.load('Ultralytics/yolov5', 'yolov5s')
+model = torch.hub.load('Ultralytics/yolov5', 'yolov5x')
 
 # only send detections above .70 confidence
 model.conf = 0.70
