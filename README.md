@@ -13,11 +13,11 @@ If you have an NVIDIA GPU, and you wish to utilize it, then you will need to ins
 # How to Run
 1. Make sure to set the IP address in the Server files to whatever one your current device is set to.
 2. Make sure to set the IP address in the client file to whatever is the device's running that. 
-3. Run the backend first, either the jupyter notebook (run on CPU) or python file (run on GPU)
-4. Then run the Client file on another device within the same network
-5. Feel free to adjust the latency and which client device is offloading by typing it into the console
-        - 
-        - 
+3. Run the backend first, either the jupyter notebook (run on CPU) or python file (run on GPU).
+4. Then run the Client file on another device within the same network.
+5. Feel free to adjust the latency and which client device is offloading by typing it into the console.
+        - Type in an integer between 0 to 300 to affect the backend's overall latency.
+        - Type in "laptop" or "phone" to indicate where it is receiving input from.
 
 # Files
 There are 3 versions of UDP Server, which are designed for running on a server:
